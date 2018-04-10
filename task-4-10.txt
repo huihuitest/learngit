@@ -1,2 +1,71 @@
-今日任务：远程库克隆
+今日任务：远程库克隆，分支管理
 命令以及返回记录：
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git add command-record.txt
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git diff
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   command-record.txt
+
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git commit -m "add record"
+[master e9bfe32] add record
+ 1 file changed, 396 insertions(+)
+ create mode 100644 command-record.txt
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git add task-4-10.txt
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git commit -m "in 4-10 the task submittid"
+[master e243281] in 4-10 the task submittid
+ 1 file changed, 2 insertions(+)
+ create mode 100644 task-4-10.txt
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git clone git@github.com:huihuitest/gitskills.git
+Cloning into 'gitskills'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ cd gitskills
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit/gitskills (master)
+$ ls
+README.md
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit/gitskills (master)
+$
+小结
+
+要克隆一个仓库，首先必须知道仓库的地址，然后使用git clone命令克隆。
+
+Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。
