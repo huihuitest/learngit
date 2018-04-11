@@ -1,0 +1,261 @@
+今日任务：学习使用码云，将本地库同步到github和码云。
+命令及返回记录：
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote add origin git@gitee.com:huihui-code/learngit.git
+fatal: remote origin already exists.
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote -v
+origin  git@github.com:huihuitest/learngit.git (fetch)
+origin  git@github.com:huihuitest/learngit.git (push)
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote rm origin
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote rm origin
+fatal: No such remote: origin
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote add origin git@gitee.com:huihui-code/learngit.git
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote -v
+origin  git@gitee.com:huihui-code/learngit.git (fetch)
+origin  git@gitee.com:huihui-code/learngit.git (push)
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote rm origin
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote add github git@github.com:huihuitest/learnit.git
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote add gitee git@gitee.com:huihui-code/learngit.git
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote -v
+gitee   git@gitee.com:huihui-code/learngit.git (fetch)
+gitee   git@gitee.com:huihui-code/learngit.git (push)
+github  git@github.com:huihuitest/learnit.git (fetch)
+github  git@github.com:huihuitest/learnit.git (push)
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git push github master
+Warning: Permanently added the RSA host key for IP address '13.229.188.59' to th         e list of known hosts.
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git push gitee master
+The authenticity of host 'gitee.com (218.11.0.86)' can't be established.
+ECDSA key fingerprint is SHA256:FQGC9Kn/eye1W8icdBgrQp+KkGYoFgbVr17bmjey0Wc.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'gitee.com,218.11.0.86' (ECDSA) to the list of known hosts.
+Connection closed by 218.11.0.86 port 22
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git push gitee master
+To gitee.com:huihui-code/learngit.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@gitee.com:huihui-code/learngit.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote rm gitee
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote -v
+github  git@github.com:huihuitest/learnit.git (fetch)
+github  git@github.com:huihuitest/learnit.git (push)
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote add gitee git@gitee.com:huihuihuihui/learngit.git
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git push -u gitee master
+Access denied
+exec request failed on channel 0
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git push gitee master
+Access denied
+exec request failed on channel 0
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git push -u github master
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote set-url github git@github.com:huihuitest/learngit.git
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git push github master
+Warning: Permanently added the RSA host key for IP address '13.250.177.223' to the list of known hosts.
+yueEverything up-to-date
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote set-url gitee git@githee.com:huihui-code/learngit.git
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git push gitee master
+ssh: Could not resolve hostname githee.com: Name or service not known
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote set-url gitee git@githee.com:huihuihuihui/learngit.git
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git push gitee master
+ssh: Could not resolve hostname githee.com: Name or service not known
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote -v
+gitee   git@githee.com:huihuihuihui/learngit.git (fetch)
+gitee   git@githee.com:huihuihuihui/learngit.git (push)
+github  git@github.com:huihuitest/learngit.git (fetch)
+github  git@github.com:huihuitest/learngit.git (push)
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote rm gitee
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote -v
+github  git@github.com:huihuitest/learngit.git (fetch)
+github  git@github.com:huihuitest/learngit.git (push)
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git remote add origin git@gitee.com:huihui-code/learngit.git
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git push -u gitee master
+fatal: 'gitee' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git push -u origin master
+To gitee.com:huihui-code/learngit.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@gitee.com:huihui-code/learngit.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git pull --rebase origin master
+warning: no common commits
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From gitee.com:huihui-code/learngit
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+First, rewinding head to replay your work on top of it...
+Applying: wrote a readme file
+Applying: add distibuted
+Applying: append GPL
+Applying: understand how stage works
+Applying: git track changes
+Applying: the second revision
+Applying: add test.txt
+Applying: remove test.txt
+Applying: add record
+Applying: in 4-10 the task submittid
+Applying: branch test
+Applying: command submitted
+Applying: retry
+Applying: branch test
+Applying: branch submitted
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git push -u origin master
+Counting objects: 42, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (40/40), done.
+Writing objects: 100% (42/42), 6.92 KiB | 709.00 KiB/s, done.
+Total 42 (delta 18), reused 0 (delta 0)
+To gitee.com:huihui-code/learngit.git
+   3c64826..65b4bce  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git push github master
+To github.com:huihuitest/learngit.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:huihuitest/learngit.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git pull --rebase github master
+From github.com:huihuitest/learngit
+ * branch            master     -> FETCH_HEAD
+First, rewinding head to replay your work on top of it...
+Applying: Initial commit
+
+13348@DESKTOP-E86F342 MINGW64 ~/learngit (master)
+$ git push -u github master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 292 bytes | 292.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:huihuitest/learngit.git
+   7c07805..893aa2e  master -> master
+Branch 'master' set up to track remote branch 'master' from 'github'.
+
+小结：
+
+
+    在GitHub上，可以任意Fork开源仓库；
+
+    自己拥有Fork后的仓库的读写权限；
+
+    可以推送pull request给官方仓库来贡献代码。
+
+	如何解决failed to push some refs to git：
+	出现错误的主要原因是github中的README.md文件不在本地代码目录中
+	可以通过如下命令进行代码合并【注：pull=fetch+merge]
+	git pull --rebase origin master    // 合并gitee
+	git pull --rebase github master    // 合并github
+	再执行语句 git push -u origin master即可完成代码上传到gitee
+	再执行语句 git push -u github master即可完成代码上传到github
+	
